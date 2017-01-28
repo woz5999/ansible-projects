@@ -1,0 +1,7 @@
+---
+- name: Create app config
+  become: yes
+  template:
+    src: "{{ app_config_file }}.j2"
+    dest: "{{ app_dir }}/{{ app_config_file }}"
+    mode: 0650

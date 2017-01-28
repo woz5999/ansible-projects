@@ -1,0 +1,9 @@
+[Unit]
+Description=Wemo
+Documentation=https://ouimeaux.readthedocs.io/en/latest/
+After=multi-user.target
+
+[Service]
+# Ubuntu/Debian convention:
+Type=simple
+ExecStart=/usr/local/bin/wemo server

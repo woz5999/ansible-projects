@@ -1,0 +1,22 @@
+---
+- name: Add mopidy apt key
+  become: yes
+  apt_key:
+    url: "https://apt.mopidy.com/mopidy.gpg"
+    state: present
+
+- name: Add mopidy apt-repository
+  become: yes
+  apt_repository:
+    repo: >
+      deb http://apt.mopidy.com/ jessie main contrib non-free
+      deb-src http://apt.mopidy.com/ jessie main contrib non-free
+    state: present
+    filename: mopidy.list
+
+- name: Install packages
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ base_packages }}"

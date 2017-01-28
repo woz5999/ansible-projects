@@ -1,0 +1,13 @@
+---
+- include: check_vars.yml
+- include: packages.yml
+- include: mopidy_modules.yml
+- include: mopidy_config.yml
+- include: external_mounts.yml
+
+- name: Enable and restart mopidy service
+  become: yes
+  service:
+    name: mopidy
+    enabled: yes
+    state: restarted

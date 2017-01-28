@@ -1,0 +1,6 @@
+---
+base_packages:
+  - cifs-utils
+  - python-setuptools
+  - python-dev
+  - build-essential 

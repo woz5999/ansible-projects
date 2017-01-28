@@ -1,0 +1,13 @@
+---
+- name: Install pre-reqs
+  become: yes
+  pip:
+    name: gevent
+    state: present
+    version: 1.1b4
+
+- name: Install ouimeaux server
+  become: yes
+  pip:
+    name: ouimeaux[server]
+    state: latest

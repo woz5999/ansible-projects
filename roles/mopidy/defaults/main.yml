@@ -1,0 +1,22 @@
+---
+base_packages:
+  - gstreamer1.0-plugins-bad
+  - mopidy
+
+mopidy_modules:
+  - Mopidy-WebSettings
+  - Mopidy-YouTube
+  - Mopidy-MusicBox-Webclient
+  - Mopidy-TuneIn
+  - Mopidy-Podcast-iTunes
+  - mopidy-gmusic
+  - pyasn1
+
+media_mount: /media/blackpower
+media_share: //192.168.0.103/Media
+media_dir: "{{ media_mount }}/music"
+share_credentials: smbcredentials
+
+app_dir: /etc/mopidy
+app_config_file: mopidy.conf
+app_logging_config: logging.conf

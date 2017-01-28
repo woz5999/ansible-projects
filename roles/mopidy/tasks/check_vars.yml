@@ -1,0 +1,22 @@
+---
+- name: Check wifi password is set
+  fail:
+    msg: Required var wifi_password not set
+  when: wifi_password is not defined
+
+- name: Check media_username is set
+  fail:
+    msg: Required var media_username not set
+  when: media_username is not defined
+
+- name: Check media password is set
+  fail:
+    msg: Required var media_password not set
+  when: media_password is not defined
+
+- name: Check google app password is set
+  fail:
+    msg: >
+      Required var google_app_password not set.
+      See: https://support.google.com/accounts/answer/185833
+  when: google_app_password is not defined

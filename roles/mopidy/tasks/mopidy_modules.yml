@@ -1,0 +1,7 @@
+---
+- name: Install mopidy modules
+  become: yes
+  pip:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ mopidy_modules }}"

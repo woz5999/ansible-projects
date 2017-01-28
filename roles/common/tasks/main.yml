@@ -1,0 +1,4 @@
+---
+- include: check_vars.yml
+- include: packages.yml
+- include: set_hostname.yml

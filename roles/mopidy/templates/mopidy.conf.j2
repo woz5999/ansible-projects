@@ -1,0 +1,74 @@
+[core]
+cache_dir = /var/cache/mopidy
+config_dir = {{ app_dir }}
+data_dir = /var/lib/mopidy
+
+[logging]
+config_file = {{ app_dir }}/{{ app_logging_config }}
+debug_file = /var/log/mopidy/mopidy-debug.log
+
+[local]
+enabled = true
+library = json
+media_dir = {{ media_dir }}
+scan_timeout = 1000
+scan_flush_threshold = 100
+scan_follow_symlinks = false
+excluded_file_extensions =
+  .directory
+  .gif
+  .html
+  .jpeg
+  .jpg
+  .log
+  .m3u
+  .sfv
+  .pdf
+  .nfo
+  .pls
+  .png
+  .psp
+  .txt
+  .sh
+
+[file]
+enabled = true
+media_dirs =
+    {{ media_dir }}
+show_dotfiles = false
+excluded_file_extensions =
+  .jpg
+  .jpeg
+follow_symlinks = false
+metadata_timeout = 1000
+
+[m3u]
+playlists_dir = /var/lib/mopidy/playlists
+
+[http]
+enabled = true
+hostname = ::
+port = 6680
+static_dir =
+zeroconf = {{ hostname }}
+
+[mpd]
+enabled = true
+hostname = ::
+port = 6600
+password = {{ wifi_password }}
+max_connections = 20
+connection_timeout = 60
+zeroconf = {{ hostname }}
+command_blacklist = listall,listallinfo
+default_playlist_scheme = m3u
+
+[gmusic]
+username = woz5999
+password = {{ google_app_password }}
+bitrate = 320
+
+[websettings]
+enabled = true
+musicbox = false
+config_file = {{ app_dir }}/{{ app_config_file }}
