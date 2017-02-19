@@ -1,11 +1,14 @@
-# Usage: ansible-playbook \
-#  --extra-vars \
-#    "hostname=$HOSTNAME \
+# Usage:
+# ansible-playbook \
+#   -i $MUSIC_HOST, \
+#   --extra-vars \
+#    "hostname=$MUSIC_HOST \
 #    wifi_password=$WIFI_PASS \
-#    google_app_password=$GOOGLE_PASS" \
-#    media_username=$MEDIA_USERNAME
-#    media_passowrd=$MEDIA_PASSWORD
-#  music_server.yml
+#    google_app_password=$GOOGLE_PASS \
+#    media_username=$MEDIA_USERNAME \
+#    media_passowrd=$MEDIA_PASSWORD" \
+# music_server.yml
+
 
 ---
 - name: Music Server
