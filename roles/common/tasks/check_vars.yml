@@ -1,5 +1,5 @@
 ---
-- name: Check hostame set
+- name: Check hostname set
   fail:
     msg: "Required var hostname not set"
   when: hostname is not defined

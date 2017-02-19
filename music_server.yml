@@ -6,7 +6,7 @@
 #    wifi_password=$WIFI_PASS \
 #    google_app_password=$GOOGLE_PASS \
 #    media_username=$MEDIA_USERNAME \
-#    media_passowrd=$MEDIA_PASSWORD" \
+#    media_password=$MEDIA_PASSWORD" \
 # music_server.yml
 
 
