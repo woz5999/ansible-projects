@@ -5,3 +5,9 @@
     name: "{{ item }}"
     state: latest
   with_items: "{{ base_packages }}"
+
+- name: Install pip
+  become: yes
+  easy_install:
+    name: pip
+    state: latest
