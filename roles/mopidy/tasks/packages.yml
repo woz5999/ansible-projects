@@ -12,7 +12,7 @@
       deb http://apt.mopidy.com/ jessie main contrib non-free
       deb-src http://apt.mopidy.com/ jessie main contrib non-free
     state: present
-    filename: mopidy.list
+    filename: mopidy
 
 - name: Install packages
   become: yes
