@@ -6,4 +6,6 @@
 
 - name: Set /etc/hosts hostname
   become: yes
-  shell: echo "127.0.0.1 {{ hostname }}" >> /etc/hosts
+  lineinfile:
+    name: /etc/hosts
+    line: '127.0.0.1 {{ hostname }}'
