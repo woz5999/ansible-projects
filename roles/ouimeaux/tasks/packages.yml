@@ -2,12 +2,25 @@
 - name: Install pre-reqs
   become: yes
   pip:
-    name: gevent
-    state: present
-    version: 1.1b4
+    name: docker-py
+    state: latest
 
-- name: Install ouimeaux server
+- name: Add docker apt key
   become: yes
-  pip:
-    name: ouimeaux[server]
+  apt_key:
+    url: "https://apt.dockerproject.org/gpg"
+    state: present
+
+- name: Add docker apt-repository
+  become: yes
+  apt_repository:
+    repo: >
+      deb http://apt.dockerproject.org/repo/ raspbian-{{ ansible_distribution_release }} main
+    state: present
+    filename: docker
+
+- name: Install docker engine
+  become: yes
+  package:
+    name: docker-engine
     state: latest

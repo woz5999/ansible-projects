@@ -1,0 +1,15 @@
+---
+- name: Pull ouimeaux image
+  become: yes
+  docker_image:
+    name: woz5999/ouimeaux-rpi
+    state: present
+
+- name: Run ouimeaux container
+  become: yes
+  docker_container:
+    name: ouimeaux
+    image: woz5999/ouimeaux-rpi
+    state: started
+    restart_policy: unless-stopped
+    network_mode: host
