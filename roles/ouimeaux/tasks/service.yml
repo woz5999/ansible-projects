@@ -5,9 +5,10 @@
     dest: /etc/systemd/system/{{ wemo_service_file }}
     mode: 0755
 
-- name: Create ouimeaux service
+- name: Start ouimeaux service
   become: yes
   systemd:
     state: started
+    enabled: yes
     daemon_reload: yes
     name: wemo
