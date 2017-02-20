@@ -6,4 +6,4 @@
 
 - name: Set /etc/hosts hostname
   become: yes
-  shell: echo "127.0.0.1 {{ hostname }}" /etc/hosts
+  shell: echo "127.0.0.1 {{ hostname }}" >> /etc/hosts
