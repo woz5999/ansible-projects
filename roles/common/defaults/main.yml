@@ -4,5 +4,5 @@ base_packages:
   - python-setuptools
   - python-dev
   - build-essential
-volume: 3dB-
+volume: 0dB
 wifi_config_file: /etc/wpa_supplicant/wpa_supplicant.conf

@@ -1,3 +1,4 @@
 ---
 - name: Set volume
-  command: amixer sset PCM {{ volume }}
+  become: yes
+  command: amixer sset PCM {{ volume }}; alsactl store
