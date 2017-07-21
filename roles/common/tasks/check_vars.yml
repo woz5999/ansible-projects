@@ -3,3 +3,13 @@
   fail:
     msg: "Required var hostname not set"
   when: hostname is not defined
+
+- name: Check wifi_ssid set
+  fail:
+    msg: "Required var wifi_ssid not set"
+  when: wifi_ssid is not defined
+
+- name: Check wifi_password set
+  fail:
+    msg: "Required var wifi_password not set"
+  when: wifi_password is not defined

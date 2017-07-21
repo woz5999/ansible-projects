@@ -1,0 +1,21 @@
+---
+- name: Get wifi configuration
+  command: wpa_passphrase "{{ wifi_ssid }}" "{{ wifi_password }}"
+  register: wifi_config
+
+- name: Configure wifi
+  become: yes
+  blockinfile:
+    path: /etc/wpa_supplicant/wpa_supplicant.conf
+    block: "{{ wifi_config.stdout }}"
+
+- name: Remove plaintext password from wifi config
+  become: yes
+  lineinfile:
+    name: /etc/wpa_supplicant/wpa_supplicant.conf
+    regexp: "#.+"
+    state: absent
+
+- name: Wifi DHCP
+  become: yes
+  command: dhclient wlan0
