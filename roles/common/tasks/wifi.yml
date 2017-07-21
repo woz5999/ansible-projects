@@ -6,13 +6,13 @@
 - name: Configure wifi
   become: yes
   blockinfile:
-    path: /etc/wpa_supplicant/wpa_supplicant.conf
+    path: "{{ wifi_config_file }}"
     block: "{{ wifi_config.stdout }}"
 
 - name: Remove plaintext password from wifi config
   become: yes
   lineinfile:
-    name: /etc/wpa_supplicant/wpa_supplicant.conf
+    name: "{{ wifi_config_file }}"
     regexp: "#.+"
     state: absent
 

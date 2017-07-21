@@ -1,0 +1,3 @@
+---
+- name: Set volume
+  command: amixer sset PCM {{ volume }}

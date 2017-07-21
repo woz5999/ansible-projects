@@ -3,4 +3,6 @@ base_packages:
   - cifs-utils
   - python-setuptools
   - python-dev
-  - build-essential 
+  - build-essential
+volume: 3dB-
+wifi_config_file: /etc/wpa_supplicant/wpa_supplicant.conf
