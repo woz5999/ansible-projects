@@ -12,8 +12,8 @@ mopidy_modules:
   - mopidy-gmusic
   - pyasn1
 
-media_mount: /media/blackpower
-media_share: //192.168.0.103/Media
+media_mount: /media/flowerpower
+media_share: //flowerpower.local/Public
 media_dir: "{{ media_mount }}/music"
 share_credentials: smbcredentials
 
