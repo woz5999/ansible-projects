@@ -11,5 +11,5 @@
     name: "{{ media_mount }}"
     src: "{{ media_share }}"
     fstype: cifs
-    opts: credentials={{ ansible_env.HOME }}/.{{ share_credentials }},defaults,user,noauto,x-systemd.automount
+    opts: guest,defaults,user,auto
     state: mounted
