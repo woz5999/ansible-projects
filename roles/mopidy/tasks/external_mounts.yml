@@ -1,10 +1,4 @@
 ---
-- name: Set share credentials
-  template:
-    src: "{{ share_credentials }}.j2"
-    dest: "{{ ansible_env.HOME }}/.{{ share_credentials }}"
-    mode: 0600
-
 - name: Mount media share
   become: yes
   mount:
